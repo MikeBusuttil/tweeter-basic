@@ -1,6 +1,6 @@
 # Tweeter Basic
 
-A simple interface for using the Twitter v2 API to authenticate and send tweets (with optional images)
+Send tweets (with optional images) and authenticate through the Twitter v2 API (OAuth 2.0) using Python.
 
 ## Quick Start
 
@@ -28,8 +28,8 @@ Send a test tweet with the following steps:
 
 ## 2do
 
-- create PyPI entry
 - give a more verbose explanation of the steps
+- write separate PyPI instructions
 
 ### future
 
