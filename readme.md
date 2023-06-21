@@ -13,10 +13,10 @@ Send a test tweet with the following steps:
   - TWITTER_ACCESS_TOKEN_SECRET
   - TWITTER_CLIENT_ID
   - TWITTER_CLIENT_SECRET
-  - TWITTER_CALLBACK_URI <- must end in `/callback` (ie. `http://localhost/callback`)
+  - TWITTER_CALLBACK_URI <- (ie. `http://localhost/callback` to match the route in `server.py`)
 - authorize the application (1 time only) to generate the seed `token.json` with the following:
-  - build & run the token generation server by executing `Authenticate/authenticate.sh` (Docker) or `python3 -m Authenticate.src.server` (Python3)
-  - navigate with a browser to your [http://localhost/auth](http://localhost/auth)
+  - run the token generation server by executing `Authenticate/authenticate.sh` (Docker) or `python3 -m Authenticate.src.server` (Python3)
+  - navigate with a browser to [http://localhost/auth](http://localhost/auth)
 - send a test tweet by executing `example/test.sh` (Docker) or `python3 -m example.test` (Python3)
 
 ## Prerequisites
