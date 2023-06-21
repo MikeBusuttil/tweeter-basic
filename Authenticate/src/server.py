@@ -1,11 +1,12 @@
-from os import environ
+from os import environ, path
 from requests_oauthlib import OAuth2Session
 from flask import Flask, request, jsonify, redirect, session
-from log import stderr as log
-from keys import code_verifier, secret_key, code_challenge
+from .log import stderr as log
+from .keys import code_verifier, secret_key, code_challenge
 
+repo_root = path.realpath(__file__).rsplit('/', 3)[0]
 from sys import path
-path.append("../../Tweet")
+path.append(f"{repo_root}/Tweet")
 from file import write
 
 global auth, token
@@ -42,20 +43,9 @@ def root():
         code_verifier=code_verifier,
         code=request.args.get("code")
     )
-    write("../../token.json", token)
+    write(f"{repo_root}/token.json", token)
 
     return jsonify(["👍"]), 200
 
-# @app.route('/refresh')
-# def refresh():
-#     global auth, token
-#     token = auth.refresh_token(
-#         client_id=environ["CLIENT_ID"],
-#         client_secret=environ["CLIENT_SECRET"],
-#         token_url="https://api.twitter.com/2/oauth2/token",
-#         refresh_token=token["refresh_token"],
-#     )
-#     log('token               :', token)
-#     write("token.json", token)
-
-#     return jsonify({"yes": True}), 200
+if __name__ == "__main__":
+    app.run(host = '0.0.0.0', port=80, debug=True)

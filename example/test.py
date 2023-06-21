@@ -1,6 +1,7 @@
+from os import environ, path
+repo_root = path.realpath(__file__).rsplit('/', 2)[0]
 from sys import path
-path.append('../Tweet')
-from os import environ
+path.append(f'{repo_root}/Tweet')
 from Tweet import Tweet
 
 tweet = Tweet(
@@ -11,6 +12,6 @@ tweet = Tweet(
 
 response = tweet.tweet(
     text="Hello world!",
-    image_path="../test/test.jpg"
+    image_path=f"{repo_root}/example/test.jpg"
 )
 print(response[0], response[1])

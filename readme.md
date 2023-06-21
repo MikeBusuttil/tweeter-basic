@@ -15,21 +15,24 @@ Send a test tweet with the following steps:
   - TWITTER_CLIENT_SECRET
   - TWITTER_CALLBACK_URI <- must end in `/callback` (ie. `http://localhost/callback`)
 - authorize the application (1 time only) to generate the seed `token.json` with the following:
-  - build & run the token generation server by executing `Authenticate/authenticate.sh`
+  - build & run the token generation server by executing `Authenticate/authenticate.sh` (Docker) or `python3 -m Authenticate.src.server` (Python3)
   - navigate with a browser to your [http://localhost/auth](http://localhost/auth)
-- send a test tweet by executing `test/test.sh`
+- send a test tweet by executing `example/test.sh` (Docker) or `python3 -m example.test` (Python3)
 
 ## Prerequisites
 
-- Docker engine
+- either:
+  - Docker engine
+  - Python3 with `flask requests requests-oauthlib`
 - Twitter project with: 
-  - v1.1 API read & write access
+  - v1.1 API read & write access (for attaching images to tweets)
   - v2 API access
 
 ## 2do
 
 - give a more verbose explanation of the steps
 - write separate PyPI instructions
+- document interfaces
 
 ### future
 

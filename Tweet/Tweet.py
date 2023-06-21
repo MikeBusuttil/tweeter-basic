@@ -3,6 +3,8 @@ import json
 from requests import post
 from .upload import TwitterMedia
 from .file import read, write
+from os import path
+repo_root = path.realpath(__file__).rsplit('/', 2)[0]
 
 def print_response(r):
     if 'application/json' in r.headers.get('Content-Type', ''):
@@ -10,7 +12,7 @@ def print_response(r):
     return r.text
 
 class Tweet:
-    def __init__(self, client_id=None, client_secret=None, callback_uri=None, token_saver=lambda x: write(file_path='../token.json', contents=x), token_fetcher=lambda: read('../token.json')):
+    def __init__(self, client_id=None, client_secret=None, callback_uri=None, token_saver=lambda x: write(file_path=f'{repo_root}/token.json', contents=x), token_fetcher=lambda: read(f'{repo_root}/token.json')):
         self.client_id = client_id
         self.client_secret = client_secret
         self.callback_uri = callback_uri
@@ -22,9 +24,7 @@ class Tweet:
         'TODO: only fetch new token if current is expired'
         'TODO: expose a save_token variable that lets consumers decide if they want the new token saved'
         token = self.refresh_token()
-        payload = {}
-        if text:
-            payload["text"] = text
+        payload = { "text": text }
         if image_path:
             payload["media"] = {"media_ids": [self._upload_image(image_path)]}
         api_response = post(
