@@ -60,4 +60,5 @@ class Tweet:
             refresh_token=token["refresh_token"],
         )
         self.token_saver(token)
+        print("token refreshed and saved")
         return token

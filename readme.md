@@ -1,21 +1,23 @@
 # Tweeter Basic
 
-A simple interface for sending tweets (with optional images) using the Twitter v2 API
+A simple interface for using the Twitter v2 API to authenticate and send tweets (with optional images)
 
 ## Quick Start
 
 Send a test tweet with the following steps:
 
-- set the following environment variables:
+- generate and set the following environment variables:
   - TWITTER_CONSUMER_API_KEY
   - TWITTER_CONSUMER_API_KEY_SECRET
   - TWITTER_ACCESS_TOKEN
   - TWITTER_ACCESS_TOKEN_SECRET
   - TWITTER_CLIENT_ID
   - TWITTER_CLIENT_SECRET
-  - TWITTER_CALLBACK_URI
-- copy `token.json` to the root directory of this repo
-- build & run by executing `test/test.sh`
+  - TWITTER_CALLBACK_URI <- must end in `/callback` (ie. `http://localhost/callback`)
+- authorize the application (1 time only) to generate the seed `token.json` with the following:
+  - build & run the token generation server by executing `Authenticate/authenticate.sh`
+  - navigate with a browser to your [http://localhost/auth](http://localhost/auth)
+- send a test tweet by executing `test/test.sh`
 
 ## Prerequisites
 
@@ -23,18 +25,11 @@ Send a test tweet with the following steps:
 - Twitter project with: 
   - v1.1 API read & write access
   - v2 API access
-- a valid OAuth v2 token saved to `token.json`
 
 ## 2do
 
-- integrate `token.json` generating code
-  - that should probably live in a different directory (ie. Authorize)
-  - save token to the root
-  - move `file.py` to be a shared library
 - create PyPI entry
-- improve tests:
-  - allow them to run by default without moving all files to same directory
-    - remove the test gitignore entries
+- give a more verbose explanation of the steps
 
 ### future
 

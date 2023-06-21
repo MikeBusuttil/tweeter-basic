@@ -17,11 +17,12 @@ ACCESS_TOKEN_SECRET = os.environ["TWITTER_ACCESS_TOKEN_SECRET"]
 FILENAME = 'test.jpg'
 MEDIA_CATEGORY = 'tweet_image'
 
-oauth = OAuth1(CONSUMER_KEY,
+oauth = OAuth1(
+  CONSUMER_KEY,
   client_secret=CONSUMER_SECRET,
   resource_owner_key=ACCESS_TOKEN,
-  resource_owner_secret=ACCESS_TOKEN_SECRET)
-
+  resource_owner_secret=ACCESS_TOKEN_SECRET
+)
 
 class TwitterMedia(object):
 
