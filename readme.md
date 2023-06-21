@@ -1,6 +1,6 @@
 # Tweeter Basic
 
-Send tweets (with optional images) and authenticate through the Twitter v2 API (OAuth 2.0) using Python.
+Send tweets (with optional images) and authenticates through the Twitter v2 API (OAuth 2.0) using Python.
 
 ## Quick Start
 
