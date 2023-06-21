@@ -1,3 +1,5 @@
+from sys import path
+path.append('../Tweet')
 from os import environ
 from Tweet import Tweet
 
@@ -9,6 +11,6 @@ tweet = Tweet(
 
 response = tweet.tweet(
     text="Hello world!",
-    image_path="test.jpg"
+    image_path="../test/test.jpg"
 )
 print(response[0], response[1])

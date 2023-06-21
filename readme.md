@@ -14,19 +14,19 @@ Send a test tweet with the following steps:
   - TWITTER_CLIENT_ID
   - TWITTER_CLIENT_SECRET
   - TWITTER_CALLBACK_URI
-- copy `token.json` to `/src` directory
+- copy `token.json` to the root directory of this repo
 - build & run by executing `test/test.sh`
 
 ## Prerequisites
 
 - Docker engine
-- Twitter project with v1.1 API read & write access
-- Twitter project with v2 API access
-- a valid OAuth v2 token saved to `src/token.json`
+- Twitter project with: 
+  - v1.1 API read & write access
+  - v2 API access
+- a valid OAuth v2 token saved to `token.json`
 
 ## 2do
 
-- rename `src` to `Tweet` and use the python-equivalent of index.js
 - integrate `token.json` generating code
   - that should probably live in a different directory (ie. Authorize)
   - save token to the root

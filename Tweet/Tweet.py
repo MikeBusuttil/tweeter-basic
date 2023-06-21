@@ -10,7 +10,7 @@ def print_response(r):
     return r.text
 
 class Tweet:
-    def __init__(self, client_id=None, client_secret=None, callback_uri=None, token_saver=lambda x: write(file_path='token.json', contents=x), token_fetcher=lambda: read('token.json')):
+    def __init__(self, client_id=None, client_secret=None, callback_uri=None, token_saver=lambda x: write(file_path='../token.json', contents=x), token_fetcher=lambda: read('../token.json')):
         self.client_id = client_id
         self.client_secret = client_secret
         self.callback_uri = callback_uri

@@ -7,7 +7,5 @@ docker run -it --rm --name test-tweet \
   -e TWITTER_CLIENT_ID=$TWITTER_CLIENT_ID \
   -e TWITTER_CLIENT_SECRET=$TWITTER_CLIENT_SECRET \
   -e TWITTER_CALLBACK_URI=$TWITTER_CALLBACK_URI \
-  -v ./src:/app \
-  -v ./test/test.jpg:/app/test.jpg \
-  -v ./test/test.py:/app/test.py \
+  -v ./:/app \
   test-tweet
