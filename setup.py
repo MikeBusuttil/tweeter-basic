@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name = 'tweeter-basic',
     description = 'Send tweets (with optional images) through the Twitter v2 API (OAuth 2.0) - authentication included',
-    version = '0.1.0',
+    version = '0.1.1',
     license = 'MIT',
     url = 'https://mike.busuttil.ca/',
     install_requires =['flask', 'requests', 'requests-oauthlib'],

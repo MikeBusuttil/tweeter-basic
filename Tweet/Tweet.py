@@ -1,8 +1,8 @@
 from requests_oauthlib import OAuth2Session
 import json
 from requests import post
-from upload import TwitterMedia
-from file import read, write
+from .upload import TwitterMedia
+from .file import read, write
 
 def print_response(r):
     if 'application/json' in r.headers.get('Content-Type', ''):
