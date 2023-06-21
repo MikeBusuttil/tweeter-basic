@@ -22,7 +22,7 @@ Send a test tweet with the following steps:
 ## Prerequisites
 
 - either:
-  - Docker engine
+  - Docker engine or
   - Python3 with `flask requests requests-oauthlib`
 - Twitter project with: 
   - v1.1 API read & write access (for attaching images to tweets)
@@ -30,9 +30,9 @@ Send a test tweet with the following steps:
 
 ## 2do
 
-- give a more verbose explanation of the steps
 - write separate PyPI instructions
 - document interfaces
+- give a more verbose explanation of the steps
 
 ### future
 
